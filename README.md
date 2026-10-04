@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AFSHA Creative Solution
 
-## Getting Started
+The AFSHA Creative Solution website is a dark, editorial-style marketing site for showcasing architectural metalwork, gates, railings, and related projects.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Responsive landing page with hero, featured projects, collections, videos, testimonials, and contact sections.
+- Collection tabs for browsing railing and metalwork offerings.
+- Featured-project carousel with smooth horizontal navigation.
+- Embedded AFSHA Creative Solution location map.
+- WhatsApp, phone, email, and social-media contact links.
+- Optimized local images, videos, fonts, and logos served from the `assets/` and `public/` directories.
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org/) with the App Router
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [Leaflet](https://leafletjs.com/) and [React Leaflet](https://react-leaflet.js.org/)
+- [Lucide React](https://lucide.dev/) icons
+
+## Requirements
+
+- Node.js 20 or newer
+- npm
+
+## Getting started
+
+1. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+The development server reloads automatically when files are changed.
+
+## Available scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Start the production server after building |
+| `npm run lint` | Run ESLint |
+
+## Project structure
+
+```text
+app/
+  contact/       Contact page
+  layout.tsx     Root layout, metadata, fonts, and shared navigation
+  page.tsx       Home page
+components/      Page sections and reusable UI components
+lib/             Shared utilities
+public/          Publicly served images and videos
+assets/          Source images, icons, fonts, and other media
+utils/           Collection data, image mappings, and shared types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The `@/*` import alias points to the project root. For example:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```tsx
+import Navbar from "@/components/navbar";
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content and assets
 
-## Learn More
+Project and collection content is defined in `utils/data.ts`. Local media is kept in `assets/` and `public/`; update the relevant data entry and asset path when adding or replacing portfolio content.
 
-To learn more about Next.js, take a look at the following resources:
+The map section uses a Google Maps embed and does not require a Google Maps API key in the current implementation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Production build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Validate the application locally before deployment:
 
-## Deploy on Vercel
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application can be deployed to any platform that supports Next.js. For a managed deployment, see the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is private and intended for AFSHA Creative Solution. No public redistribution license is currently specified.

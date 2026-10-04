@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import 'leaflet/dist/leaflet.css'
+import Navbar from "@/components/navbar";
+import Footer from "@/components/Footer";
+import Whatsapp from "@/components/Whatsapp";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const geist = Geist({
+  subsets:['latin'],
+  variable:'--font-sans',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
@@ -21,9 +26,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", "font-sans", geist.variable , outfit.variable)}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      
+      <body className="min-h-full flex flex-col font-sans">
+        <Navbar/>
+        <Whatsapp/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   );
 }
