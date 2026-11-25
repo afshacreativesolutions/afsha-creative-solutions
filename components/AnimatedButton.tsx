@@ -14,63 +14,19 @@ const AnimatedButton = ({
     text
 }: AnimatedButtonProps) => {
     return (
-        <>
-            <div
-                className='cursor-pointer animated-button rounded-full justify-between px-2 items-center flex border h-13 w-65 bg-black/60'
-                style={{
-                    '--icon-color': iconColor,
-                    '--text-color': textColor,
-                    '--dot-color' : dotColor
-                } as React.CSSProperties}
-            >
-                <div className='animated-button__icon h-10 w-10 border flex justify-center items-center rounded-2xl'>
-                    <div className='border-2 animated-button__icon__dot rounded-2xl h-4'></div>
-                </div>
-                <div className='animated-button__text text-[10px] uppercase font-medium px-4 tracking-[0.2em]'>{text}</div>
+        <div
+            className='animated-button flex h-12 w-full max-w-[280px] min-w-0 cursor-pointer items-center justify-between gap-2 rounded-full border bg-black/60 px-2 sm:h-13 sm:w-65 sm:max-w-none'
+            style={{
+                '--icon-color': iconColor,
+                '--text-color': textColor,
+                '--dot-color' : dotColor
+            } as React.CSSProperties}
+        >
+            <div className='animated-button__icon flex h-9 w-9 shrink-0 items-center justify-center rounded-2xl border sm:h-10 sm:w-10'>
+                <div className='border-2 animated-button__icon__dot rounded-2xl h-4'></div>
             </div>
-            <style jsx>{`
-                .animated-button {
-                    border-color: color-mix(in srgb, var(--icon-color) 40%, transparent);
-                    transition: border-color 180ms ease, background-color 180ms ease;
-                }
-
-                .animated-button:hover {
-                    border-color: color-mix(in srgb, var(--icon-color) 70%, transparent);
-                }
-
-                .animated-button__text {
-                    color: var(--text-color);
-                    transition: transform 600ms ease;
-                }
-
-                .animated-button:hover .animated-button__text {
-                        transform: translateX(-75px);
-                }
-
-              
-
-                .animated-button__icon {
-                    transition: transform 600ms ease;
-                }
-
-                .animated-button:hover .animated-button__icon {
-                    transform: translateX(200px);
-                    background-color: var(--icon-color);
-                }
-
-                .animated-button__icon {
-                    border-color: var(--icon-color);
-                }
-
-                .animated-button__icon__dot {
-                    border-color: var(--icon-color);
-                }
-
-                .animated-button:hover .animated-button__icon__dot {
-                    border-color: var(--dot-color);
-                }
-            `}</style>
-        </>
+            <div className='animated-button__text min-w-0 flex-1 whitespace-nowrap px-2 text-center text-[9px] font-medium uppercase tracking-[0.12em] sm:flex-none sm:px-4 sm:text-[10px] sm:tracking-[0.2em]'>{text}</div>
+        </div>
     )
 }
 

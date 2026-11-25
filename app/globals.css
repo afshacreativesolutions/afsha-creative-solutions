@@ -151,10 +151,86 @@
   * {
     @apply border-border outline-ring/50;
   }
+  button, [role="button"] {
+    touch-action: manipulation;
+  }
   body {
     @apply bg-background text-foreground;
   }
   html {
     @apply font-sans;
   }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .card-description {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Animated button styles (replaces client-side styled-jsx runtime) */
+.animated-button {
+  border-color: color-mix(in srgb, var(--icon-color) 40%, transparent);
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.animated-button__text {
+  color: var(--text-color);
+  transition: transform 600ms ease;
+}
+
+.animated-button__icon {
+  transition: transform 600ms ease;
+  border-color: var(--icon-color);
+}
+
+.animated-button__icon__dot {
+  border-color: var(--icon-color);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .animated-button:hover {
+    border-color: color-mix(in srgb, var(--icon-color) 70%, transparent);
+  }
+
+  .animated-button:hover .animated-button__text {
+    transform: translateX(-75px);
+  }
+
+  .animated-button:hover .animated-button__icon {
+    transform: translateX(200px);
+    background-color: var(--icon-color);
+  }
+
+  .animated-button:hover .animated-button__icon__dot {
+    border-color: var(--dot-color);
+  }
+}
+
+/* Scroll indicator animation */
+.gold-stick {
+  background-color: #CDA274;
+  animation: slideIn 1.2s ease-in-out infinite,
+             colorChange 1.2s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(0%); }
+  to { transform: translateY(110%); }
+}
+
+@keyframes colorChange {
+  0%   { background-color: color-mix(in srgb, #CDA274, transparent); }
+  100% { background-color: color-mix(in srgb, #CDA274 0%, transparent); }
 }

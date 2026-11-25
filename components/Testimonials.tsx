@@ -1,4 +1,3 @@
-"use client"
 import React from 'react'
 import AnimatedButton from './AnimatedButton'
 import Image from 'next/image'
@@ -8,101 +7,103 @@ import Link from 'next/link'
 
 const Testimonials = () => {
     return (
-        <div className='bg-cardGray/20'>
-            <div className='min-h-[140vh]  flex flex-col justify-between items-center py-20 max-w-[90%] mx-auto px-6 '>
-                <div className='flex justify-between'>
-                    <div className='font-heading text-3xl font-extralight tracking-[0.01em] w-[40%]'>
+        <section id='testimonials' aria-label='Testimonials' className='bg-cardGray/20'>
+            <div className='mx-auto flex min-h-0 max-w-7xl flex-col gap-8 px-4 py-10 sm:min-h-[100vh] sm:gap-10 sm:justify-between sm:px-6 sm:py-20 lg:min-h-[120vh]'>
+                <div className='flex flex-col gap-3 sm:flex-row sm:gap-5 sm:justify-between'>
+                    <div className='w-full font-heading text-2xl font-extralight tracking-[0.01em] sm:w-[45%] sm:text-3xl'>
                         CRAFTED FOR SPACES. TRUSTED BY CUSTOMERS.
                     </div>
 
-                    <div className='text-end text-sm text-textGray w-[40%] font-light'>
-                        From the first measurement to the finished installation, our work is built around the customer's requirements. See what customers have to say about their experience with Afsha Creative Solution
-                       <Link 
-                       href="https://wa.me/919634776691?text=Hello%20Afsha%20Creative%20Solution%2C%20I%20found%20your%20website%20and%20would%20like%20to%20discuss%20a%20metal%20fabrication%20project." 
-                       target='_blank'
-                       rel="noopener noreferrer"
-                                aria-label="WhatsApp"
-                      > <div className='flex justify-end mt-6'>
-                            <AnimatedButton text='GET A QOUTE' />
-                        </div></Link>
+                    <div className='w-full text-left  text-sm font-light text-textGray sm:w-[45%] sm:text-right'>
+                        From the first measurement to the finished installation, our work is built around the customer&apos;s requirements. See what customers have to say about their experience with Afsha Creative Solution<br/>
+                         <Link 
+                            href="https://wa.me/919634776691?text=Hello%20Afsha%20Creative%20Solution%2C%20I%20found%20your%20website%20and%20would%20like%20to%20discuss%20a%20metal%20fabrication%20project." 
+                            target='_blank'
+                            rel="noopener noreferrer"
+                            aria-label="WhatsApp"
+                            className='inline-block'
+                        > 
+                            <div className='mt-4 flex justify-start sm:mt-5 sm:justify-end'>
+                                <AnimatedButton text='GET A QUOTE' />
+                            </div>
+                        </Link>
                     </div>
                 </div>
 
-                <div className='flex gap-5 border-b border-white/10 pb-15'>
-                    <div className='border border-white/[0.06] h-[480px] w-[280px] bg-cardGray rounded-xl p-4'>
-                        <div className='flex justify-between items-center border-b border-white/6 p-1 py-5'>
-                            <div className='relative h-10 border-white/10 bg-white/10
-                     w-10 rounded-full overflow-hidden border flex justify-center items-center'>
+                <div className='scrollbar-none -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto border-b border-white/10 px-4 pb-8 scroll-pl-4 sm:mx-0 sm:gap-5 sm:pb-12 sm:px-0 sm:scroll-pl-0'>
+                    {/* Card 1: Google Reviews Highlight */}
+                    <div className='flex h-[460px] w-[min(82vw,290px)] shrink-0 snap-start flex-col justify-between rounded-xl border border-white/[0.06] bg-cardGray p-4 sm:h-[480px] sm:w-[280px]'>
+                        <div className='flex items-center justify-between border-b border-white/10 px-1 py-3 sm:py-4'>
+                            <div className='relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/10'>
                                 <Image src="/google-lens-icon.png" width={20} height={20} alt='google-logo' className='h-5 w-5 object-contain' />
                             </div>
-                            <div className=''>
+                            <div>
                                 <div className='text-sm'>
                                     GOOGLE REVIEWS
                                 </div>
-                                <div className='flex gap-0.5'>
+                                <div className='flex items-center gap-0.5'>
                                     <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                                     <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                                     <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                                     <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                                     <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
-                                    <div className='text-[9px] text-textGray'>
+                                    <div className='ml-1 text-[9px] text-textGray'>
                                         80+ <br /> Reviews
                                     </div>
                                 </div>
-
                             </div>
 
-                            <div className='flex h-5 w-17 justify-center items-center gap-1 rounded-xl border bg-green-800/30 border-green-300/50'>
-                                <div className='h-1.5 w-1.5 bg-green-700 rounded-full '></div>
+                            <div className='flex h-5 w-16 items-center justify-center gap-1 rounded-xl border border-green-300/50 bg-green-800/30'>
+                                <div className='h-1.5 w-1.5 rounded-full bg-green-500'></div>
                                 <div className='text-[10px] font-light text-green-400'>Verified</div>
                             </div>
                         </div>
 
-                        <div className='border-b border-white/10 p-3 flex flex-col gap-5 py-5'>
-                            <div className='flex justify-between'>
+                        <div className='flex flex-col gap-3 border-b border-white/10 px-1 py-3 sm:gap-4 sm:py-4'>
+                            <div className='flex items-center justify-between'>
                                 <div className='flex gap-0.5'>
-                                    <Image src="/star.svg" width={20} height={20} alt='star' className='h-5 w-5' />
-                                    <Image src="/star.svg" width={20} height={20} alt='star' className='h-5 w-5' />
-                                    <Image src="/star.svg" width={20} height={20} alt='star' className='h-5 w-5' />
-                                    <Image src="/star.svg" width={20} height={20} alt='star' className='h-5 w-5' />
-                                    <Image src="/star.svg" width={20} height={20} alt='star' className='h-5 w-5' />
-
+                                    <Image src="/star.svg" width={18} height={18} alt='star' className='h-[18px] w-[18px]' />
+                                    <Image src="/star.svg" width={18} height={18} alt='star' className='h-[18px] w-[18px]' />
+                                    <Image src="/star.svg" width={18} height={18} alt='star' className='h-[18px] w-[18px]' />
+                                    <Image src="/star.svg" width={18} height={18} alt='star' className='h-[18px] w-[18px]' />
+                                    <Image src="/star.svg" width={18} height={18} alt='star' className='h-[18px] w-[18px]' />
                                 </div>
 
-                                <div className='text-[9px] text-textGray font-light'>
-                                    9 month ago
+                                <div className='text-[9px] font-light text-textGray'>
+                                    9 months ago
                                 </div>
                             </div>
 
-                            <div className='italic font-extralight text-sm '>
-                                "Hi Rohit Nyamgoud here
-                                Railingo is not only a company it’s a family , In one word I can say is just close your eyes and go for the purchase you like. you will remember the product and person for a life time."
+                            <div className='text-xs italic font-extralight leading-relaxed text-white/90 sm:text-sm'>
+                                &quot;Hi Rohit Nyamgoud here.
+                                Railingo is not only a company it’s a family, In one word I can say is just close your eyes and go for the purchase you like. you will remember the product and person for a life time.&quot;
                             </div>
                         </div>
 
-                        <div className='flex gap-2 p-1 pt-4 pb-6 border-b border-white/10'>
-                            <div className='w-9 h-9 rounded-full bg-amber-700 flex justify-center items-center'>
-                                r
+                        <div className='flex items-center gap-2.5 border-b border-white/10 px-1 py-3 sm:py-4'>
+                            <div className='flex h-9 w-9 items-center justify-center rounded-full bg-amber-700 text-sm font-medium'>
+                                R
                             </div>
                             <div className='text-sm'>
-                                rohit nyamgoud
+                                Rohit Nyamgoud
                                 <div className='text-[9px] font-extralight text-textGray'>
                                     Verified Client
                                 </div>
                             </div>
                         </div>
 
-                        <div className='py-5 flex justify-center items-center'>
-                            <button className='flex gap-1 items-center border cursor-pointer hover:bg-textGold/10 hover:border-textGold/30 hover:text-textGold border-white/10 p-2 rounded-xl text-[10px] font-light bg-white/5 tracking-[0.1em]'>
+                        <div className='flex items-center justify-center py-3 sm:py-4'>
+                            <button className='flex cursor-pointer items-center gap-1.5 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-[10px] font-light tracking-[0.1em] transition-colors hover:border-textGold/30 hover:bg-textGold/10 hover:text-textGold'>
                                 View 80+ Reviews on Google
-                                <ExternalLink className='stroke-2 w-[10px]' />
+                                <ExternalLink className='w-2.5 stroke-2' />
                             </button>
                         </div>
                     </div>
 
-                    <div className='h-[480px] w-[280px] flex flex-col justify-between'>
-                        <div className='w-full h-[260px] border bg-cardGray flex flex-col justify-between border-white/10 rounded-xl p-4'>
-                            <div className='flex gap-0.5 p-1 '>
+                    {/* Card 2: Mohit Agarwal + Gate */}
+                    <div className='flex h-[460px] w-[min(82vw,290px)] shrink-0 snap-start flex-col justify-between sm:h-[480px] sm:w-[280px]'>
+                        <div className='flex h-[245px] w-full flex-col justify-between rounded-xl border border-white/10 bg-cardGray p-4 sm:h-[260px]'>
+                            <div className='flex gap-0.5 px-1'>
                                 <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                                 <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                                 <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
@@ -110,16 +111,16 @@ const Testimonials = () => {
                                 <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                             </div>
 
-                            <div className='border-b p-1 py-5 border-white/10 text-[12px] italic font-extralight '>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque voluptates laudantium quam fugit impedit accusamus quia cum consequatur beatae unde at assumenda dolor eveniet tenetur, obcaecati nesciunt autem eum reprehenderit?
+                            <div className='border-b border-white/10 px-1 py-3.5 text-xs italic font-extralight leading-relaxed text-white/90 sm:py-4'>
+                                “We needed a custom main gate for our house. The team understood the design we wanted and delivered a strong, well-finished gate.”
                             </div>
 
-                            <div className='flex gap-2 p-1 pt-4 pb-6'>
-                                <div className='w-9 h-9 rounded-full bg-amber-700 flex justify-center items-center'>
-                                    r
+                            <div className='flex items-center gap-2.5 px-1 pt-2 sm:pt-3'>
+                                <div className='flex h-9 w-9 items-center justify-center rounded-full bg-green-700 text-sm font-medium'>
+                                    M
                                 </div>
                                 <div className='text-sm'>
-                                    rohit nyamgoud
+                                    Mohit Agarwal
                                     <div className='text-[9px] font-extralight text-textGray'>
                                         Verified Client
                                     </div>
@@ -127,18 +128,19 @@ const Testimonials = () => {
                             </div>
                         </div>
 
-                        <div className='relative w-full h-[200px]  rounded-xl overflow-hidden'>
-                            <Image src={images.iron_gates.ironGate3} fill sizes='100px 100px' alt='gate' className='object-cover' />
+                        <div className='relative h-[195px] w-full overflow-hidden rounded-xl sm:h-[200px]'>
+                            <Image src={images.iron_gates.ironGate5} fill sizes='(max-width: 640px) 290px, 280px' alt='gate' className='object-cover' />
                         </div>
                     </div>
-                    <div className='h-[480px] w-[280px] flex flex-col justify-between'>
 
-                        <div className='relative w-full h-[200px]  rounded-xl overflow-hidden'>
-                            <Image src={images.steel_stair_railing.ssStairRailling11} fill sizes='100px 100px' alt='gate' className='object-cover' />
+                    {/* Card 3: Railing + Rahul Sharma */}
+                    <div className='flex h-[460px] w-[min(82vw,290px)] shrink-0 snap-start flex-col justify-between sm:h-[480px] sm:w-[280px]'>
+                        <div className='relative h-[195px] w-full overflow-hidden rounded-xl sm:h-[200px]'>
+                            <Image src={images.steel_stair_railing.ssStairRailling8} fill sizes='(max-width: 640px) 290px, 280px' alt='stair railing' className='object-cover' />
                         </div>
 
-                        <div className='w-full h-[260px] bg-cardGray border flex flex-col justify-between border-white/10 rounded-xl p-4'>
-                            <div className='flex gap-0.5 p-1 '>
+                        <div className='flex h-[245px] w-full flex-col justify-between rounded-xl border border-white/10 bg-cardGray p-4 sm:h-[260px]'>
+                            <div className='flex gap-0.5 px-1'>
                                 <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                                 <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                                 <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
@@ -146,16 +148,45 @@ const Testimonials = () => {
                                 <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
                             </div>
 
-                            <div className='border-b p-1 py-5 border-white/10 text-[12px] italic font-extralight '>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque voluptates laudantium quam fugit impedit accusamus quia cum consequatur beatae unde at assumenda dolor eveniet tenetur, obcaecati nesciunt autem eum reprehenderit?
+                            <div className='border-b border-white/10 px-1 py-3.5 text-xs italic font-extralight leading-relaxed text-white/90 sm:py-4'>
+                                “The stair railing was designed exactly according to our requirement. The finishing looks clean and the overall work was handled professionally.”
                             </div>
 
-                            <div className='flex gap-2 p-1 pt-4 pb-6'>
-                                <div className='w-9 h-9 rounded-full bg-amber-700 flex justify-center items-center'>
-                                    r
+                            <div className='flex items-center gap-2.5 px-1 pt-2 sm:pt-3'>
+                                <div className='flex h-9 w-9 items-center justify-center rounded-full bg-blue-700 text-sm font-medium'>
+                                    R
                                 </div>
                                 <div className='text-sm'>
-                                    rohit nyamgoud
+                                    Rahul Sharma
+                                    <div className='text-[9px] font-extralight text-textGray'>
+                                        Verified Client
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Card 4: Amit Verma + Balcony */}
+                    <div className='flex h-[460px] w-[min(82vw,290px)] shrink-0 snap-start flex-col justify-between sm:h-[480px] sm:w-[280px]'>
+                        <div className='flex h-[245px] w-full flex-col justify-between rounded-xl border border-white/10 bg-cardGray p-4 sm:h-[260px]'>
+                            <div className='flex gap-0.5 px-1'>
+                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
+                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
+                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
+                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
+                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
+                            </div>
+
+                            <div className='border-b border-white/10 px-1 py-3.5 text-xs italic font-extralight leading-relaxed text-white/90 sm:py-4'>
+                                “We wanted a modern balcony railing for our new home. The design and fabrication turned out very well and matched the look of the house.”
+                            </div>
+
+                            <div className='flex items-center gap-2.5 px-1 pt-2 sm:pt-3'>
+                                <div className='flex h-9 w-9 items-center justify-center rounded-full bg-red-700 text-sm font-medium'>
+                                    A
+                                </div>
+                                <div className='text-sm'>
+                                    Amit Verma
                                     <div className='text-[9px] font-extralight text-textGray'>
                                         Verified Client
                                     </div>
@@ -163,82 +194,54 @@ const Testimonials = () => {
                             </div>
                         </div>
 
-
-                    </div>
-                    <div className='h-[480px] w-[280px] flex flex-col justify-between'>
-                        <div className='w-full h-[260px] bg-cardGray border flex flex-col justify-between border-white/10 rounded-xl p-4'>
-                            <div className='flex gap-0.5 p-1 '>
-                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
-                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
-                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
-                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
-                                <Image src="/star.svg" width={15} height={15} alt='star' className='h-[15px] w-[15px]' />
-                            </div>
-
-                            <div className='border-b p-1 py-5 border-white/10 text-[12px] italic font-extralight '>
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque voluptates laudantium quam fugit impedit accusamus quia cum consequatur beatae unde at assumenda dolor eveniet tenetur, obcaecati nesciunt autem eum reprehenderit?
-                            </div>
-
-                            <div className='flex gap-2 p-1 pt-4 pb-6'>
-                                <div className='w-9 h-9 rounded-full bg-amber-700 flex justify-center items-center'>
-                                    r
-                                </div>
-                                <div className='text-sm'>
-                                    rohit nyamgoud
-                                    <div className='text-[9px] font-extralight text-textGray'>
-                                        Verified Client
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='relative w-full h-[200px]  rounded-xl overflow-hidden'>
-                            <Image src={images.iron_gates.ironGate3} fill sizes='100px 100px' alt='gate' className='object-cover' />
+                        <div className='relative h-[195px] w-full overflow-hidden rounded-xl sm:h-[200px]'>
+                            <Image src={images.steel_balcony_railing.ssBalconyRailling9} fill sizes='(max-width: 640px) 290px, 280px' alt='balcony railing' className='object-cover' />
                         </div>
                     </div>
 
-
+                    {/* Trailing spacer for mobile horizontal scroll padding */}
+                    <div className='w-1 shrink-0 sm:hidden' aria-hidden='true' />
                 </div>
 
-                <div className='flex w-full justify-between items-center p-1'>
-                    <div className='text-5xl font-light'>
+                {/* Stats Counter */}
+                <div className='grid w-full grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 sm:gap-y-6 lg:flex lg:items-center lg:justify-between'>
+                    <div className='text-3xl font-light sm:text-4xl lg:text-5xl'>
                         80+
-                        <div className='text-[9px] mt-2 uppercase text-textGray font-extralight'>
+                        <div className='mt-1.5 text-[9px] uppercase tracking-wider text-textGray font-extralight sm:text-[10px]'>
                             Total Reviews
                         </div>
                     </div>
 
-                    <div className='text-5xl font-light'>
+                    <div className='text-3xl font-light sm:text-4xl lg:text-5xl'>
                         100+
-                        <div className='text-[9px] mt-2 uppercase text-textGray font-extralight'>
+                        <div className='mt-1.5 text-[9px] uppercase tracking-wider text-textGray font-extralight sm:text-[10px]'>
                             Custom Railing
                         </div>
                     </div>
 
-                    <div className='text-5xl font-light'>
+                    <div className='text-3xl font-light sm:text-4xl lg:text-5xl'>
                         400+
-                        <div className='text-[9px] mt-2 uppercase text-textGray font-extralight'>
+                        <div className='mt-1.5 text-[9px] uppercase tracking-wider text-textGray font-extralight sm:text-[10px]'>
                             Custom Gate
                         </div>
                     </div>
 
-                    <div className='text-5xl font-light'>
+                    <div className='text-3xl font-light sm:text-4xl lg:text-5xl'>
                         10+
-                        <div className='text-[9px] mt-2 uppercase text-textGray font-extralight'>
+                        <div className='mt-1.5 text-[9px] uppercase tracking-wider text-textGray font-extralight sm:text-[10px]'>
                             Year Working
                         </div>
                     </div>
 
-                    <div className='text-5xl font-light'>
+                    <div className='col-span-2 text-3xl font-light sm:col-span-1 sm:text-4xl lg:text-5xl'>
                         99.4%
-                        <div className='text-[9px] mt-2 uppercase text-textGray font-extralight'>
+                        <div className='mt-1.5 text-[9px] uppercase tracking-wider text-textGray font-extralight sm:text-[10px]'>
                             On-Time Handover Rate
                         </div>
                     </div>
                 </div>
             </div>
-
-        </div>
+        </section>
     )
 }
 

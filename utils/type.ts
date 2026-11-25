@@ -5,12 +5,14 @@ export type croselType = {
     title: string
     description: string
     image: string | StaticImageData
+    href?: string
 }
 
 export type collectionItemType = {
     title: string
     description: string
     image: string | StaticImageData
+    href?: string
 }
 
 export type collectionDataType = {

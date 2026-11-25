@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>New project enquiry</title>
+    <style>
+      @media screen and (max-width: 600px) {
+        .email-shell { width: 100% !important; }
+        .email-padding { padding-left: 20px !important; padding-right: 20px !important; }
+        .field-cell { display: block !important; width: 100% !important; padding: 0 0 16px !important; }
+        .message-cell { padding: 18px !important; }
+      }
+    </style>
+  </head>
+  <body style="margin:0;background:#090909;color:#f5f1e9;font-family:Arial,Helvetica,sans-serif;">
+    <div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;">New project enquiry from {{{CUSTOMER_NAME}}} about {{{CATEGORY}}}.</div>
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#090909;">
+      <tr><td align="center" style="padding:30px 12px;">
+        <table role="presentation" class="email-shell" width="600" cellspacing="0" cellpadding="0" border="0" style="width:600px;max-width:600px;border:1px solid #30291f;background:#11100e;">
+          <tr><td class="email-padding" style="padding:30px 38px 26px;border-bottom:1px solid #30291f;">
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"><tr>
+              <td valign="middle"><div style="font-size:12px;font-weight:bold;letter-spacing:3px;color:#e1bd8d;">AFSHA CREATIVE SOLUTION</div><div style="padding-top:7px;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#99938a;">Made to measure · Moradabad, India</div></td>
+              <td align="right" valign="middle" style="font-size:9px;letter-spacing:1.8px;color:#8c8479;">WEBSITE ENQUIRY</td>
+            </tr></table>
+          </td></tr>
+          <tr><td class="email-padding" style="padding:32px 38px 22px;">
+            <div style="font-size:9px;font-weight:bold;letter-spacing:2.5px;color:#c99f6c;text-transform:uppercase;">New project enquiry</div>
+            <h1 style="margin:12px 0 0;font-size:28px;font-weight:400;line-height:1.25;color:#f5f1e9;">{{{CATEGORY}}}</h1>
+            <p style="margin:10px 0 0;font-size:13px;line-height:1.7;color:#aaa39a;">A new request has been submitted through the contact form. Reference <span style="color:#e1bd8d;">{{{ENQUIRY_REFERENCE}}}</span></p>
+          </td></tr>
+          <tr><td class="email-padding" style="padding:8px 38px 12px;">
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-top:1px solid #30291f;border-left:1px solid #30291f;">
+              <tr>
+                <td class="field-cell" width="50%" style="padding:16px;border-right:1px solid #30291f;border-bottom:1px solid #30291f;"><div style="font-size:9px;letter-spacing:1.7px;text-transform:uppercase;color:#948b80;">Customer</div><div style="padding-top:8px;font-size:14px;line-height:1.5;color:#f5f1e9;">{{{CUSTOMER_NAME}}}</div></td>
+                <td class="field-cell" width="50%" style="padding:16px;border-right:1px solid #30291f;border-bottom:1px solid #30291f;"><div style="font-size:9px;letter-spacing:1.7px;text-transform:uppercase;color:#948b80;">Phone</div><div style="padding-top:8px;font-size:14px;line-height:1.5;color:#f5f1e9;">{{{CUSTOMER_PHONE}}}</div></td>
+              </tr>
+              <tr>
+                <td class="field-cell" width="50%" style="padding:16px;border-right:1px solid #30291f;border-bottom:1px solid #30291f;"><div style="font-size:9px;letter-spacing:1.7px;text-transform:uppercase;color:#948b80;">Email address</div><div style="padding-top:8px;font-size:14px;line-height:1.5;word-break:break-word;color:#e1bd8d;">{{{CUSTOMER_EMAIL}}}</div></td>
+                <td class="field-cell" width="50%" style="padding:16px;border-right:1px solid #30291f;border-bottom:1px solid #30291f;"><div style="font-size:9px;letter-spacing:1.7px;text-transform:uppercase;color:#948b80;">Submitted</div><div style="padding-top:8px;font-size:14px;line-height:1.5;color:#f5f1e9;">{{{SUBMITTED_AT}}}</div></td>
+              </tr>
+            </table>
+          </td></tr>
+          <tr><td class="email-padding" style="padding:18px 38px 8px;"><div style="font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:#c99f6c;">Project details</div></td></tr>
+          <tr><td class="email-padding" style="padding:0 38px 24px;">
+            <div class="message-cell" style="padding:20px;border:1px solid #30291f;background:#171512;font-size:14px;line-height:1.8;color:#e8e2d9;white-space:pre-wrap;">{{{MESSAGE}}}</div>
+          </td></tr>
+          <tr><td class="email-padding" style="padding:0 38px 32px;">
+            <a href="mailto:{{{CUSTOMER_EMAIL}}}?subject=Re%3A%20Project%20enquiry%20{{{ENQUIRY_REFERENCE}}}" style="display:inline-block;padding:14px 22px;border:1px solid #c99f6c;border-radius:999px;color:#e1bd8d;font-size:10px;font-weight:bold;letter-spacing:1.8px;text-decoration:none;text-transform:uppercase;">Reply to customer&nbsp; →</a>
+          </td></tr>
+          <tr><td class="email-padding" style="padding:18px 38px;border-top:1px solid #30291f;font-size:10px;line-height:1.7;color:#8e887f;">Afsha Creative Solution · Moradabad, India<br><a href="{{{SITE_URL}}}" style="color:#c99f6c;text-decoration:none;">View website</a></td></tr>
+        </table>
+      </td></tr>
+    </table>
+  </body>
+</html>

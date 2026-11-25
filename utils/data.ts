@@ -119,3 +119,72 @@ export const collectionsData : collectionDataType = {
         
     ]
 }
+
+
+export const MenuData = {
+  steelRailling : {
+    headline : "Steel Railing Collection",
+    description : "Premium-quality steel railings designed for strength, safety, durability, and modern elegance. Crafted to enhance every space with style and reliability.",
+    cards : [
+      {
+        image: images.steel_stair_railing.ssStairRailling8,
+        title: "STAIR"
+      },
+      {
+        image: images.steel_spiral_railing.ssSpiralRailling1,
+        title: "SPIRAL"
+      },
+      {
+        image: images.steel_balcony_railing.ssBalconyRailling8,
+        title: "BALCONY"
+      },
+
+    ],
+    buttonText: "View All Steel Railings"
+  },
+  ironRailling : {
+    headline : "Iron Railing Collection",
+    description : "Strong, durable, and stylish iron railings crafted to provide safety, security, and elegance for every space.",
+    cards : [
+      {
+        image: images.iron_balcony_railing.ironbrail1,
+        title: "BALCONY"
+      },
+      {
+        image: images.iron_stair_railing.ironStairRailling4,
+        title: "STAIR"
+      },
+     
+    ],
+    buttonText: "View All Iron Railings"
+  },
+  ironGates : {
+    headline : "Iron Gates Collection",
+    description : "Durable and stylish iron gates designed for maximum security, strength, and elegance. Built to protect your space with lasting quality.",
+    cards : [
+      {
+        image: images.iron_gates.ironGate5,
+        title: "MAIN GATE"
+      },
+      {
+        image: images.iron_gates.ironGate3,
+        title: "SECURITY GATE"
+      },
+     
+    ],
+    buttonText: "View All Iron Gates"
+  },
+  steelGates : {
+    headline : "Steel Gates Collection",
+    description : "Strong, durable, and stylish steel gates designed for superior security, long-lasting performance, and modern elegance.",
+    cards : [
+      {
+        image: images.steel_gate.ssGate4,
+        title: "MAIN GATE"
+      },
+    
+     
+    ],
+    buttonText: "View All Steel Gates"
+  },
+}

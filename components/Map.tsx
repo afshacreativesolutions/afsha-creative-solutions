@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 const Map = () => {
     return (
-        <div className="mx-auto max-w-[90%] py-10">
-            <div className="relative h-[420px] w-full overflow-hidden rounded-2xl border border-white/10 sm:h-[500px] lg:h-[560px]">
+        <div className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10">
+            <div className="relative h-[360px] w-full overflow-hidden rounded-xl border border-white/10 sm:h-[500px] sm:rounded-2xl lg:h-[560px]">
 
                 {/* Google Map */}
                 <iframe
@@ -17,9 +17,9 @@ const Map = () => {
                 />
 
                 {/* Location overlay */}
-                <div className="pointer-events-none absolute right-5 top-5 flex items-center gap-3 rounded-full border border-white/10 bg-black/55 px-3 py-2 shadow-lg backdrop-blur-sm">
+                <div className="pointer-events-none absolute right-3 top-3 flex max-w-[calc(100%-1.5rem)] items-center gap-2 rounded-full border border-white/10 bg-black/65 px-2.5 py-2 shadow-lg backdrop-blur-sm sm:right-5 sm:top-5 sm:gap-3 sm:px-3">
 
-                    <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/80">
+                    <div className="relative flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/80 sm:h-10 sm:w-10">
                         <Image
                             src="/google-lens-icon.png"
                             width={20}
@@ -34,7 +34,7 @@ const Map = () => {
                             Location
                         </div>
 
-                        <div className="text-sm font-medium text-white">
+                        <div className="truncate text-xs font-medium text-white sm:text-sm">
                             AFSHA Creative Solution
                         </div>
                     </div>

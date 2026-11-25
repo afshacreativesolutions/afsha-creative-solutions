@@ -90,6 +90,15 @@ import ssGate25 from "../assets/steel gate/SS-MG_25.jpg"
  import ssStairRailling12 from "../assets/steel stair railing/download (2).jpg"
  import ssStairRailling13 from "../assets/steel stair railing/download.jpg"
 
+ //portraits
+ import Portait1 from "../assets/portraits/Portrait1.png"
+ import Portait2 from "../assets/portraits/Portrait2.png"
+
+ export const portraits = {
+    Portait1,
+    Portait2
+ }
+
 export const images = {
     iron_balcony_railing: {
         ironbrail1,

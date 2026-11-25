@@ -6,11 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed:catalog": "node --env-file=.env.local scripts/seed-catalog.mjs",
+    "seed:blog": "node --env-file=.env.local scripts/seed-blog.mjs",
+    "seed:crm": "node --env-file=.env.local scripts/seed-crm.mjs",
+    "test:intelligence": "node scripts/test-intelligence-system.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
     "@googlemaps/js-api-loader": "^2.1.3",
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.119.2",
     "class-variance-authority": "^0.7.1",
     "cn": "^0.3.0",
     "leaflet": "^1.9.4",

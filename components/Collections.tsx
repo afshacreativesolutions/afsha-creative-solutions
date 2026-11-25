@@ -1,45 +1,64 @@
 "use client"
 import React, { useState } from 'react'
-import { collectionsData } from '@/utils/data'
 import Card from './Card'
 import type { collectionDataType } from '@/utils/type'
 import AnimatedButton from './AnimatedButton'
+import Link from 'next/link'
 
-export const Collections = () => {
+export const Collections = ({ collectionsData }: { collectionsData: collectionDataType }) => {
     const collection = Object.keys(collectionsData) as Array<keyof collectionDataType>
-    const [selectCollecton, setSelectCollection] = useState<keyof collectionDataType>('Raillings')
+    const [selectCollecton, setSelectCollection] = useState<keyof collectionDataType>(
+        collection[0] ?? 'Raillings'
+    )
+
     return (
-        <div id='collection' className='min-h-screen flex flex-col justify-between items-center py-20 max-w-[90%] mx-auto px-6 '>
+        <section id='collection' className='mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-10 sm:min-h-[80vh] sm:justify-between sm:gap-10 sm:px-6 sm:py-20'>
             <div className='flex flex-col gap-3'>
-                <div className='text-center font-heading text-4xl font-light tracking-[0.01em]'>
+                <div className='text-center font-heading text-2xl font-light tracking-[0.01em] sm:text-4xl'>
                     Our Collections
                     <div className='border-b mt-2 w-12 border-gray-700 mx-auto'></div>
                 </div>
-                <div className='flex gap-2 justify-center '>
+                <div className='flex flex-wrap justify-center gap-2'>
                     {collection.map((item) => (
-                        <button type='button' onClick={() => setSelectCollection(item)} key={item} className={` ${selectCollecton == item ? "border-textGold/30 bg-textGold/70 text-black font-medium" : "border-gray-800 bg-[#080808]/80"} border uppercase hover:border-gray-600  hover:bg-[#080808] text-sm tracking-[0.04em] text-[#B3B3B3] hover:text-gray-200 p-3 rounded-3xl w-fit cursor-pointer`}>
+                        <button
+                            type="button"
+                            onClick={() => setSelectCollection(item)}
+                            key={item}
+                            aria-pressed={selectCollecton === item}
+                            className={`inline-flex min-h-11 touch-manipulation cursor-pointer select-none items-center justify-center rounded-3xl border px-4 py-3 text-xs uppercase tracking-[0.04em] transition-colors active:scale-[0.98] sm:text-sm ${
+                                selectCollecton === item
+                                    ? "border-textGold/40 bg-textGold/70 font-semibold text-black"
+                                    : "border-gray-800 bg-[#080808]/80 text-[#B3B3B3] hover:border-gray-600 hover:bg-[#080808] hover:text-gray-200"
+                            }`}
+                        >
                             {item}
                         </button>
                     ))}
                 </div>
             </div>
 
-            <div className='flex justify-center items-center gap-2'>
-                {collectionsData[selectCollecton].map((item, i) => (
+            <div className='grid w-full grid-cols-2 items-center justify-center gap-2.5 py-1 sm:flex sm:flex-wrap sm:gap-4 sm:py-4'>
+                {collectionsData[selectCollecton]?.map((item) => (
                     <Card
-                        key={i}
+                        key={`${selectCollecton}-${item.title}`}
                         title={item.title}
-                        description={item.description}
                         image={item.image}
-                        height='h-60'
-                        width='w-60'
+                        href={item.href}
+                        height='h-[48vw] min-h-[160px] max-h-[250px] sm:h-60'
+                        width='w-full sm:w-60'
+                        rounded='rounded-xl'
                     />
                 ))}
             </div>
 
-            <div className=' flex justify-center'>
-                <AnimatedButton text='Gates Collecton' />
+            <div className='flex w-full justify-center sm:w-auto'>
+                <Link
+                    href={`/products?category=${selectCollecton === 'Gates' ? 'gates' : 'railings'}&material=all`}
+                    className='block w-full max-w-[280px] sm:w-auto'
+                >
+                    <AnimatedButton text={`Explore ${selectCollecton === 'Gates' ? 'Gates' : 'Railings'}`} />
+                </Link>
             </div>
-        </div>
+        </section>
     )
 }
