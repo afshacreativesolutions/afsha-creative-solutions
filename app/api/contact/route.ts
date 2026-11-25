@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
       : categories.find((item) => item.slug === category)?.name ?? category;
 
   const enquiryReference = `AF-${Date.now().toString(36).toUpperCase()}-${crypto.randomUUID().slice(0, 4).toUpperCase()}`;
-  const siteUrl = (await getPublicSiteOrigin()) || "https://afshacreative.in";
+  const siteUrl = (await getPublicSiteOrigin()) || "https://www.afshacreative.in";
   const whatsappUrl = new URL("https://wa.me/919634776691");
   whatsappUrl.searchParams.set(
     "text",

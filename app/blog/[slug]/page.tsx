@@ -26,9 +26,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     post.content.slice(0, 160).replace(/[#*`\n]/g, " ");
 
   const canonical = post.canonical_url || `/blog/${post.slug}`;
-  const ogImage = post.featured_image?.startsWith("http")
-    ? post.featured_image
-    : absoluteUrl("/videos/hero-poster.webp");
+  const ogImage = `https://www.afshacreative.in/blog/${post.slug}/opengraph-image`;
 
   return {
     title,
@@ -36,6 +34,8 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     alternates: { canonical },
     openGraph: {
       type: "article",
+      locale: "en_IN",
+      siteName: "Afsha Creative Solution",
       title,
       description,
       url: canonical,

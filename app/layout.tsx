@@ -13,92 +13,123 @@ import { ConsentProvider } from "@/components/consent/ConsentProvider";
 import CookieBanner from "@/components/consent/CookieBanner";
 import CookieSettingsModal from "@/components/consent/CookieSettingsModal";
 import NavigationTracker from "@/components/tracking/NavigationTracker";
-import { DEFAULT_KEYWORDS, getSiteUrl } from "@/lib/seo";
+import {
+  DEFAULT_KEYWORDS,
+  PRODUCTION_SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_EMAIL,
+  BUSINESS_ADDRESS,
+  absoluteUrl,
+} from "@/lib/seo";
 
 const geist = Geist({
-  subsets: ['latin'],
-  variable: '--font-sans',
-  display: 'swap',
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  display: 'swap',
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(getSiteUrl()),
+  metadataBase: new URL(PRODUCTION_SITE_URL),
   title: {
     default: "Custom Metal Gates & Railings in Moradabad | Afsha Creative Solution",
-    template: "%s",
+    template: "%s | Afsha Creative Solution",
   },
-  description: "Explore premium custom metal gates, architectural railings and decorative metalwork by Afsha Creative Solution in Moradabad, India. Request a custom design and quote.",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
   keywords: DEFAULT_KEYWORDS,
-  alternates: { canonical: "/" },
+  authors: [{ name: SITE_NAME, url: PRODUCTION_SITE_URL }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  alternates: {
+    canonical: PRODUCTION_SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "/",
-    siteName: "Afsha Creative Solution",
+    url: PRODUCTION_SITE_URL,
+    siteName: SITE_NAME,
     title: "Custom Metal Gates & Railings in Moradabad | Afsha Creative Solution",
-    description: "Explore premium custom metal gates, architectural railings and decorative metalwork by Afsha Creative Solution in Moradabad, India. Request a custom design and quote.",
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: absoluteUrl("/opengraph-image"),
+        width: 1200,
+        height: 630,
+        alt: "Afsha Creative Solution — Architectural Metalwork",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Custom Metal Gates & Railings in Moradabad | Afsha Creative Solution",
-    description: "Explore premium custom metal gates, architectural railings and decorative metalwork by Afsha Creative Solution in Moradabad, India. Request a custom design and quote.",
+    description: SITE_DESCRIPTION,
+    images: [absoluteUrl("/opengraph-image")],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Afsha Creative Solution",
-  url: getSiteUrl(),
-  email: "afshacreativesolutions@gmail.com",
-  telephone: "+91-9624776691",
+  name: SITE_NAME,
+  url: PRODUCTION_SITE_URL,
+  email: BUSINESS_EMAIL,
+  telephone: "+91-9634776691",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Harthala, Lodhipur",
-    addressLocality: "Moradabad",
-    addressRegion: "Uttar Pradesh",
-    postalCode: "244001",
-    addressCountry: "IN",
+    streetAddress: BUSINESS_ADDRESS.streetAddress,
+    addressLocality: BUSINESS_ADDRESS.addressLocality,
+    addressRegion: BUSINESS_ADDRESS.addressRegion,
+    postalCode: BUSINESS_ADDRESS.postalCode,
+    addressCountry: BUSINESS_ADDRESS.addressCountry,
   },
 };
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Afsha Creative Solution",
-  url: getSiteUrl(),
-  email: "afshacreativesolutions@gmail.com",
-  telephone: "+91-9624776691",
+  name: SITE_NAME,
+  url: PRODUCTION_SITE_URL,
+  email: BUSINESS_EMAIL,
+  telephone: "+91-9634776691",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Harthala, Lodhipur",
-    addressLocality: "Moradabad",
-    addressRegion: "Uttar Pradesh",
-    postalCode: "244001",
-    addressCountry: "IN",
+    streetAddress: BUSINESS_ADDRESS.streetAddress,
+    addressLocality: BUSINESS_ADDRESS.addressLocality,
+    addressRegion: BUSINESS_ADDRESS.addressRegion,
+    postalCode: BUSINESS_ADDRESS.postalCode,
+    addressCountry: BUSINESS_ADDRESS.addressCountry,
   },
   areaServed: "Moradabad, Uttar Pradesh, India",
+  priceRange: "₹₹₹",
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Afsha Creative Solution",
-  url: getSiteUrl(),
+  name: SITE_NAME,
+  url: PRODUCTION_SITE_URL,
   potentialAction: {
     "@type": "SearchAction",
-    target: `${getSiteUrl()}/products?search={search_term_string}`,
+    target: `${PRODUCTION_SITE_URL}/products?search={search_term_string}`,
     "query-input": "required name=search_term_string",
   },
 };

@@ -1,16 +1,32 @@
-export const SITE_NAME = "Afsha Creative Solution";
-export const SITE_DESCRIPTION =
-  "Premium custom metal gates, architectural railings, and decorative metalwork by Afsha Creative Solutions in Moradabad, India.";
-export const DEFAULT_SITE_URL = "https://afshacreative.in";
+import {
+  absoluteUrl,
+  canonicalUrl,
+  getSiteUrl,
+  PRODUCTION_SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  BUSINESS_WHATSAPP_NUMBER,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_EMAIL,
+  BUSINESS_ADDRESS,
+  buildWhatsAppQuoteUrl,
+} from "./site-config";
 
-export function getSiteUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL || DEFAULT_SITE_URL).replace(/\/$/, "");
-}
+export {
+  absoluteUrl,
+  canonicalUrl,
+  getSiteUrl,
+  PRODUCTION_SITE_URL,
+  SITE_NAME,
+  SITE_DESCRIPTION,
+  BUSINESS_WHATSAPP_NUMBER,
+  BUSINESS_PHONE_DISPLAY,
+  BUSINESS_EMAIL,
+  BUSINESS_ADDRESS,
+  buildWhatsAppQuoteUrl,
+};
 
-export function absoluteUrl(path = "/") {
-  const base = getSiteUrl();
-  return `${base}${path.startsWith("/") ? path : `/${path}`}`;
-}
+export const DEFAULT_SITE_URL = PRODUCTION_SITE_URL;
 
 export const DEFAULT_KEYWORDS = [
   "custom metal gates in Moradabad",

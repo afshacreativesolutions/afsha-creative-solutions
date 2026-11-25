@@ -22,20 +22,34 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   const description =
     category.description ||
     `Explore bespoke ${category.name.toLowerCase()} handcrafted in Moradabad by Afsha Creative Solutions. Made-to-measure sizing and premium finishes.`;
+  const canonical = `/categories/${category.slug}`;
+  const ogImageUrl = `https://www.afshacreative.in/categories/${category.slug}/opengraph-image`;
+
   return {
     title,
     description,
-    alternates: { canonical: `/categories/${category.slug}` },
+    alternates: { canonical },
     openGraph: {
       type: "website",
+      locale: "en_IN",
+      siteName: "Afsha Creative Solution",
       title,
       description,
-      url: `/categories/${category.slug}`,
+      url: canonical,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: `${category.name} — Afsha Creative Solution`,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImageUrl],
     },
   };
 }

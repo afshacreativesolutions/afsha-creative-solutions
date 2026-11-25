@@ -1,18 +1,14 @@
 import "server-only";
-import { headers } from "next/headers";
 
-export async function getPublicSiteOrigin() {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL;
-  const deploymentHost = process.env.VERCEL_URL;
-  const canonicalUrl = configuredUrl || (deploymentHost ? `https://${deploymentHost}` : undefined);
+import { absoluteUrl, getSiteUrl, PRODUCTION_SITE_URL } from "./site-config";
 
-  if (canonicalUrl) return new URL(canonicalUrl).origin;
-
-  const requestHeaders = await headers();
-  const host = (requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host"))?.split(",")[0]?.trim();
-  if (!host) return "";
-
-  const forwardedProtocol = requestHeaders.get("x-forwarded-proto")?.split(",")[0]?.trim();
-  const protocol = forwardedProtocol || (/^(localhost|127\.0\.0\.1)(:\d+)?$/.test(host) ? "http" : "https");
-  return new URL(`${protocol}://${host}`).origin;
+/**
+ * Backward-compatible helper for server-side origin resolution.
+ * Always resolves to the official production origin (https://www.afshacreative.in),
+ * completely preventing Vercel deployment URLs from leaking into customer-facing links.
+ */
+export async function getPublicSiteOrigin(): Promise<string> {
+  return getSiteUrl();
 }
+
+export { absoluteUrl, PRODUCTION_SITE_URL };

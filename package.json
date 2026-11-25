@@ -10,7 +10,8 @@
     "seed:catalog": "node --env-file=.env.local scripts/seed-catalog.mjs",
     "seed:blog": "node --env-file=.env.local scripts/seed-blog.mjs",
     "seed:crm": "node --env-file=.env.local scripts/seed-crm.mjs",
-    "test:intelligence": "node scripts/test-intelligence-system.mjs"
+    "test:intelligence": "node scripts/test-intelligence-system.mjs",
+    "test:seo": "node scripts/test-og-and-seo.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

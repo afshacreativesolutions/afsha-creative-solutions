@@ -123,7 +123,7 @@ export function buildCustomerConfirmationHtml({
   customerName,
   referenceNumber,
   categoryName,
-  siteUrl = "https://afshacreative.in",
+  siteUrl = "https://www.afshacreative.in",
   whatsappUrl,
 }: {
   customerName: string;

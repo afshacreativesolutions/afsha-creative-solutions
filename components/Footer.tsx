@@ -147,9 +147,9 @@ const Footer = () => {
                             <Image src={icons.mail} width={20} height={20} alt='Mail' />
                             <div className="hover:text-textGold transition duration-300 ease-in-out">afshacreativesolutions@gmail.com</div>
                         </div> </Link>
-                        <Link href="tel:+919624776691">  <div className='flex gap-2 text-sm font-extralight tracking-[0.03em] sm:tracking-[0.06em]'>
+                        <Link href="tel:+919634776691">  <div className='flex gap-2 text-sm font-extralight tracking-[0.03em] sm:tracking-[0.06em]'>
                             <Image src={icons.phone} width={20} height={20} alt='phone' />
-                            <div className="hover:text-textGold transition duration-300 ease-in-out">9624776691</div>
+                            <div className="hover:text-textGold transition duration-300 ease-in-out">9634776691</div>
                         </div> </Link>
                         <Link href="https://maps.google.com/?cid=7804843562812692638&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed" target='_blank' rel='noreferrer'> <div className='flex items-start gap-2 text-sm leading-6 font-extralight tracking-[0.03em] sm:tracking-[0.06em]'>
                             <Image src={icons.location} width={20} height={20} alt='location' className='self-start' />
